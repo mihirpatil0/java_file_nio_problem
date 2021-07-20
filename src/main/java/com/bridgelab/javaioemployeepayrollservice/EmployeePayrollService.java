@@ -102,6 +102,16 @@ public class EmployeePayrollService
         return 0;
     }
 
+    public long readEmployeePayrollData(IOService ioService)
+    {
+        if (ioService.equals(IOService.FILE_IO))
+        {
+            this.employeePayrollDataList = new EmployeePayrollFileIOService().readData();
+            return employeePayrollDataList.size();
+        }
+        return 0;
+    }
+
     public static void main(String[] args)
     {
         ArrayList<EmployeePayrollData> employeePayrollDataList = new ArrayList<>();

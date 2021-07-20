@@ -32,4 +32,19 @@ public class EmployeepayrollServiceTest
         long entries = employeePayrollService.countEntries(EmployeePayrollService.IOService.FILE_IO);
         Assertions.assertEquals(3, entries);
     }
+
+    @Test
+    public void givenFileOnReadingFromFileShouldMatchEmployeeCount()
+    {
+        EmployeePayrollData[] arrayOfEmps = {
+                new EmployeePayrollData(1, "Naruto", 1000000.0),
+                new EmployeePayrollData(2, "Hinata", 2000000.0),
+                new EmployeePayrollData(3, "Sasuke", 3000000.0)
+        };
+        EmployeePayrollService employeePayrollService;
+        employeePayrollService = new EmployeePayrollService(Arrays.asList(arrayOfEmps));
+        //EmployeePayrollService employeePayrollService = new EmployeePayrollService();
+        long entries = employeePayrollService.readEmployeePayrollData(EmployeePayrollService.IOService.FILE_IO);
+        Assertions.assertEquals(3, entries);
+    }
 }
