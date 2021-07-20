@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.bridgelab.javaioemployeepayrollservicetest.EmployeepayrollServiceTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-07-20T15:09:22" hostname="NARUTO" time="0.09">
+<testsuite name="com.bridgelab.javaioemployeepayrollservicetest.EmployeepayrollServiceTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-07-20T17:15:01" hostname="NARUTO" time="0.038">
   <properties/>
-  <testcase name="given3EmployeesWhenWrittenToFileShouldMatchEmployeeEntries()" classname="com.bridgelab.javaioemployeepayrollservicetest.EmployeepayrollServiceTest" time="0.09"/>
-  <system-out><![CDATA[]]></system-out>
+  <testcase name="given3EmployeesWhenWrittenToFileShouldMatchEmployeeEntries()" classname="com.bridgelab.javaioemployeepayrollservicetest.EmployeepayrollServiceTest" time="0.038"/>
+  <system-out><![CDATA[EmployeePayrollData : [ id=1, name='Naruto', salary=1000000.0]
+EmployeePayrollData : [ id=2, name='Hinata', salary=2000000.0]
+EmployeePayrollData : [ id=3, name='Sasuke', salary=3000000.0]
+]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

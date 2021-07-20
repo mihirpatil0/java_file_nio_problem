@@ -2,6 +2,7 @@ package com.bridgelab.javaioemployeepayrollservicetest;
 
 import com.bridgelab.javaioemployeepayrollservice.EmployeePayrollData;
 import com.bridgelab.javaioemployeepayrollservice.EmployeePayrollService;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
@@ -27,5 +28,8 @@ public class EmployeepayrollServiceTest
         EmployeePayrollService employeePayrollService;
         employeePayrollService = new EmployeePayrollService(Arrays.asList(arrayOfEmps));
         employeePayrollService.writeEmployeePayrollData(EmployeePayrollService.IOService.FILE_IO);
+        employeePayrollService.printData(EmployeePayrollService.IOService.FILE_IO);
+        long entries = employeePayrollService.countEntries(EmployeePayrollService.IOService.FILE_IO);
+        Assertions.assertEquals(3, entries);
     }
 }

@@ -66,6 +66,42 @@ public class EmployeePayrollService
         }
     }
 
+    /**
+     * Name : printData
+     *
+     * Description : Printing employee data to console.
+     *
+     * @param ioService
+     *
+     * Modification : First Commit 20-July-2021.
+     */
+    public void printData(IOService ioService)
+    {
+        if (ioService.equals(IOService.FILE_IO))
+        {
+            new EmployeePayrollFileIOService().printData();
+        }
+    }
+
+    /**
+     * Name : countEntries
+     *
+     * Description : Counting the total number of records present in file.
+     *
+     * @param ioService
+     * @return
+     *
+     * Modification : First Commit 20-July-2021
+     */
+    public long countEntries(IOService ioService)
+    {
+        if (ioService.equals(IOService.FILE_IO))
+        {
+            return new EmployeePayrollFileIOService().countEntries();
+        }
+        return 0;
+    }
+
     public static void main(String[] args)
     {
         ArrayList<EmployeePayrollData> employeePayrollDataList = new ArrayList<>();

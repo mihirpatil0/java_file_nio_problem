@@ -1,5 +1,6 @@
 package com.bridgelab.javaioemployeepayrollservice;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -10,6 +11,15 @@ public class EmployeePayrollFileIOService
 {
     public static String PAYROLL_FILE_NAME = "payroll-file.txt";
 
+    /**
+     * Name : writeData
+     *
+     * Description : Writing employee data into file.
+     *
+     * @param employeePayrollDataList
+     *
+     * Modification : First Commit - 20-July-2021
+     */
     public void writeData(List<EmployeePayrollData> employeePayrollDataList)
     {
         StringBuffer empBuffer = new StringBuffer();
@@ -26,5 +36,47 @@ public class EmployeePayrollFileIOService
         {
             e.printStackTrace();
         }
+    }
+
+    /**
+     * Name : printData
+     *
+     * Description : Reading the data from file and printing it to console.
+     *
+     * Modification : First Commit 20-July-2021.
+     */
+    public void printData()
+    {
+        try
+        {
+            Files.lines(new File(PAYROLL_FILE_NAME).toPath()).forEach(System.out::println);
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Name : countEntries.
+     *
+     * Description : counting total number of entries present in a file.
+     *
+     * @return
+     *
+     * Modification : First Commit 20-July-2021
+     */
+    public long countEntries()
+    {
+        long entries = 0;
+        try
+        {
+            entries = Files.lines(new File(PAYROLL_FILE_NAME).toPath()).count();
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+        return entries;
     }
 }
